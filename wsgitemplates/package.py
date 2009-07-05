@@ -1,10 +1,19 @@
-from base import BaseTemplate
+from paste.script import templates
 from paste.script.templates import var
 import os
 
-class Package(BaseTemplate):
+class Package(templates.Template):
     summary = "A simple package with a buildout"
     _template_dir = "templates/package"
+
+    
+    use_cheetah = True
+    
+    def run(self, command, output_dir, vars):
+        templates.Template.run(self, command, output_dir, vars)
+
+    def post(self, *args, **kargs):
+        templates.Template.post(self, *args, **kargs)
 
     vars = [
         var('version', 'Version', default='1.0'),
