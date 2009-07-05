@@ -11,5 +11,5 @@ class ${entrypointname.title()}Middleware(object):
     
     def __call__(self, environ, start_response):
         request = Request(environ)
-        response = Response("Hello World!")
+        response = request.get_response(self.app)
         return response(environ, start_response)
