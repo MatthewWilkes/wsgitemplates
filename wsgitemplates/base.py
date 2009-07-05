@@ -14,6 +14,11 @@ class BaseTemplate(templates.Template):
         self.write_files(command, output_dir, vars)
         self.post(command, original_output_dir, vars)
 
+    def check_vars(self, vars, _):
+        vars['type'] = self.entrypoint_type
+        vars = templates.Template.check_vars(self, vars, _)
+        return vars
+
     def post(self, command, output_dir, vars):
         setuppy = open(os.path.join(output_dir, "setup.py"), "r")
         s = setuppy.read()
