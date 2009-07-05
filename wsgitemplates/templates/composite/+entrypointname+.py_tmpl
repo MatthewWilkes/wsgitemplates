@@ -1,6 +1,6 @@
 from webob import Request
 
-def ${entrypointname.title()}CompositeFactory(loader, global_config, **local_conf):
+def ${entrypointname.title()}Factory(loader, global_config, **local_conf):
     
     applications = {}
     
