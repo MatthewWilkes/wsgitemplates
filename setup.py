@@ -22,6 +22,9 @@ setup(name='wsgitemplates',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
-      # -*- Entry points: -*-
+      [paste.paster_create_template]
+      wsgi_filter = wsgitemplates:Middleware
+      wsgi_composite = wsgitemplates:Composite
+      wsgi_application = wsgitemplates:EndPoint
       """,
       )
