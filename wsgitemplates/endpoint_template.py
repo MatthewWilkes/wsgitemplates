@@ -1,5 +1,4 @@
 from paste.script.templates import var
-import os
 
 from base import BaseTemplate
 
