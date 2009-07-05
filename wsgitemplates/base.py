@@ -14,3 +14,8 @@ class BaseTemplate(templates.Template):
     def post(self, *args, **kargs):
         templates.Template.post(self, *args, **kargs)
 
+    def getEntrypoints(self, vars):
+        return "[%s]\n%s = %s:%s" % (self.entrypoint_type,
+                                     vars['entrypoint_name'],
+                                     vars['egg'],
+                                     vars['entrypoint_name'].title()+'Factory')
