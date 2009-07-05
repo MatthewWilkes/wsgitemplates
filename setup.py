@@ -18,6 +18,7 @@ setup(name='wsgitemplates',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+        'PasteScript',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
