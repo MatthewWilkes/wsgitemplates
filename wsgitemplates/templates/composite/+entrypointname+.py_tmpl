@@ -1,17 +1,14 @@
-from webob import Request
+from webob import Request, Response
 
 def ${entrypointname.title()}Factory(loader, global_config, **local_conf):
     
     applications = {}
     
     for id, app in local_conf.items():
-        applications[id] = loader.get_app(app, global_conf=global_conf)
+        applications[id] = loader.get_app(app, global_conf=global_config)
     
-    def getApplication():
-        return ${entrypointname.title()}Middleware(**applications)
-    
-    return getApplication
-
+    return ${entrypointname.title()}Composite(**applications)
+        
 class ${entrypointname.title()}Composite(object):
     """A composite application"""
     
