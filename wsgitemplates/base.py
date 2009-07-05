@@ -1,3 +1,5 @@
+import os
+
 from paste.script import templates
 
 class BaseTemplate(templates.Template):
