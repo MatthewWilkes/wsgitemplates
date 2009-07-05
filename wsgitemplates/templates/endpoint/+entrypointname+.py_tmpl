@@ -1,7 +1,7 @@
-from webob import Request
+from webob import Request, Response
 
 def ${entrypointname.title()}Factory(global_config, **local_conf):
-    return ${entrypointname.title()}Application
+    return ${entrypointname.title()}Application()
 
 class ${entrypointname.title()}Application(object):
     """An endpoint"""
