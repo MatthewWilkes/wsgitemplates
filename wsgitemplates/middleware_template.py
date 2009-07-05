@@ -8,6 +8,8 @@ class Middleware(BaseTemplate):
     _template_dir = "templates/middleware"
     required_templates = 'wsgi_package',
 
+    entrypoint_type = "paste.filter_factory"
+
     vars = [
         var('entrypointname', 'The name of the middleware filter being created.' 
                               ' (lowercase letters only, no special chars)'),
