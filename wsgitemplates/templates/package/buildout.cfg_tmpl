@@ -21,8 +21,8 @@ egg = lxml == 2.1.5
 force = false
 
 [wsgi]
-recipe=repoze.recipe.egg
-eggs=
+recipe=zc.recipe.egg
+eggs =
 	PasteScript
     $egg
     
