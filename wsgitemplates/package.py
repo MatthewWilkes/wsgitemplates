@@ -37,9 +37,10 @@ class Package(BaseTemplate):
             segs.append("__init__.py")
             init = open(os.path.join(*segs), "w")
             if i == len(vars['segs'])-1:
-                init.write("__import__('pkg_resources').declare_namespace(__name__)")
                 segs[-1] = "README.txt"
                 open(os.path.join(*segs), "w").close()
+            else:
+                init.write("__import__('pkg_resources').declare_namespace(__name__)")
             init.close()
         os.chdir(cwd)
         super(Package, self).post(command, output_dir, vars)
