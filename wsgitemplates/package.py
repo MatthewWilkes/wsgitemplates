@@ -12,9 +12,6 @@ class Package(templates.Template):
     def run(self, command, output_dir, vars):
         templates.Template.run(self, command, output_dir, vars)
 
-    def post(self, *args, **kargs):
-        templates.Template.post(self, *args, **kargs)
-
     vars = [
         var('version', 'Version', default='1.0'),
         var('description', 'One-line description of the package'),
