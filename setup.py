@@ -19,10 +19,13 @@ setup(name='wsgitemplates',
       zip_safe=False,
       install_requires=[
         'PasteScript',
+        'Cheetah>=1.0',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
       [paste.paster_create_template]
+      wsgi_package = wsgitemplates:Package
+
       wsgi_filter = wsgitemplates:Middleware
       wsgi_composite = wsgitemplates:Composite
       wsgi_application = wsgitemplates:EndPoint
