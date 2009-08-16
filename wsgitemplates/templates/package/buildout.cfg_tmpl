@@ -15,7 +15,7 @@ develop =
 [test]
 recipe = zc.recipe.testrunner
 eggs =
-   ${wsgi}
+   \${wsgi}
 
 [wsgi]
 recipe=zc.recipe.egg
