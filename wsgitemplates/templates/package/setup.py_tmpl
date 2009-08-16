@@ -25,6 +25,7 @@ setup(name=${repr($egg)},
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'WebOb',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
