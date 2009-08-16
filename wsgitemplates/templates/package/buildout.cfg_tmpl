@@ -1,6 +1,6 @@
 [buildout]
 parts =
-    lxml
+    test
     wsgi
     wsgi-conf
     supervisor
@@ -12,13 +12,10 @@ find-links =
 develop =
     .
 
-[versions]
-lxml=2.1.5
-
-[lxml]
-recipe = z3c.recipe.staticlxml
-egg = lxml == 2.1.5
-force = false
+[test]
+recipe = zc.recipe.testrunner
+eggs =
+   ${wsgi}
 
 [wsgi]
 recipe=zc.recipe.egg
