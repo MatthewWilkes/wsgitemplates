@@ -23,7 +23,7 @@ class test_${entrypointname.lower()}(unittest.TestCase):
     
     def test_plain_directory_uses_plain_text(self):
         req = Request.blank('/plain/')
-        status, headers, body = req.call_application(wsgi_app)
+        status, headers, body = req.call_application(self.app)
 
         # Use more convenient data types
         status = int(status[:3])
@@ -36,7 +36,7 @@ class test_${entrypointname.lower()}(unittest.TestCase):
 
     def test_html_uses_xhtml(self):
         req = Request.blank('/html/')
-        status, headers, body = req.call_application(wsgi_app)
+        status, headers, body = req.call_application(self.app)
 
         # Use more convenient data types
         status = int(status[:3])
@@ -49,7 +49,7 @@ class test_${entrypointname.lower()}(unittest.TestCase):
 
     def test_root_uses_default(self):
         req = Request.blank('/')
-        status, headers, body = req.call_application(wsgi_app)
+        status, headers, body = req.call_application(self.app)
 
         # Use more convenient data types
         status = int(status[:3])
