@@ -27,7 +27,7 @@ class test_${entrypointname.lower()}(unittest.TestCase):
 
         # Use more convenient data types
         status = int(status[:3])
-        body = ''.join(list(body))        
+        body = ''.join(list(body))
         headers = dict(headers)
         
         assert status == 200
@@ -40,7 +40,7 @@ class test_${entrypointname.lower()}(unittest.TestCase):
 
         # Use more convenient data types
         status = int(status[:3])
-        body = ''.join(list(body))        
+        body = ''.join(list(body))
         headers = dict(headers)
         
         assert status == 200
@@ -53,7 +53,7 @@ class test_${entrypointname.lower()}(unittest.TestCase):
 
         # Use more convenient data types
         status = int(status[:3])
-        body = ''.join(list(body))        
+        body = ''.join(list(body))
         headers = dict(headers)
         
         assert status == 200
