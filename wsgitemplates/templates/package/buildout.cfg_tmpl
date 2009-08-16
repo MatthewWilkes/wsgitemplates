@@ -26,6 +26,7 @@ eggs =
 recipe=collective.recipe.template
 input=\${buildout:directory}/inc/paste.ini.in
 output=\${buildout:directory}/etc/paste.ini
+host = 127.0.0.1
 port = 8080
 
 [supervisor]
