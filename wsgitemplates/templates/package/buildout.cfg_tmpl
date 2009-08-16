@@ -39,4 +39,4 @@ user = admin
 password = admin
 serverurl = http://127.0.0.1:\${supervisor:port}
 programs =
-	10 transform \${buildout:bin-directory}/paster [serve \${wsgi-conf:output}] \${buildout:directory} true
+	10 wsgi \${buildout:bin-directory}/paster [serve \${wsgi-conf:output}] \${buildout:directory} true

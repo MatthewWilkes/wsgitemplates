@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = 0.0
+version = ${repr($version)}
 
 setup(name=${repr($egg)},
       version=version,
@@ -25,6 +25,7 @@ setup(name=${repr($egg)},
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'WSGIUtils',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
