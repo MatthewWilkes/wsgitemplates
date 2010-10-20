@@ -15,7 +15,7 @@ pipeline =
 #if $type == 'paste.filter_factory'
     myfilter
 #end if
-	app
+    app
 #end if
 
 #if $type == 'paste.app_factory'
