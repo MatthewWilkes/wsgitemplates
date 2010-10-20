@@ -2,7 +2,6 @@
 parts =
     test
     wsgi
-    wsgi-conf
 find-links =
     http://download.zope.org/ppix/
     http://download.zope.org/distribution/
@@ -13,17 +12,10 @@ develop =
 [test]
 recipe = zc.recipe.testrunner
 eggs =
-   \${wsgi:eggs}
+    \${wsgi:eggs}
 
 [wsgi]
 recipe=zc.recipe.egg
 eggs =
-	PasteScript
+    PasteScript
     $egg
-    
-[wsgi-conf]
-recipe=collective.recipe.template
-input=\${buildout:directory}/inc/paste.ini.in
-output=\${buildout:directory}/etc/paste.ini
-host = 127.0.0.1
-port = 8080

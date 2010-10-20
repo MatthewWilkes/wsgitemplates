@@ -1,8 +1,8 @@
 #Set up a http server on the port defined in buildout.cfg 
 [server:main]
 use = egg:Paste#http
-host = \${wsgi-conf:host}
-port = \${wsgi-conf:port}
+host = 127.0.0.1
+port = 8080
 
 #if $type == 'paste.composite_factory'
 [composite:main]
