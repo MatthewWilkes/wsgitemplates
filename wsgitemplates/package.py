@@ -33,7 +33,9 @@ class Package(templates.Template):
     
     def post(self, command, output_dir, vars):
         cwd = os.getcwd()
-        os.chdir(os.path.join(vars['egg'], 'src'))
+        os.chdir(vars['egg'])
+        os.mkdir('src')
+        os.chdir('src')
         for i in range(len(vars['segs'])):
             segs = vars['segs'][0:i+1]
             try:
