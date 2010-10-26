@@ -14,5 +14,4 @@ class Test${entrypointname.title()}Application(unittest.TestCase):
         expected_status = '200 OK'
         status, headers, body = request.call_application(self.app)
         self.assertEqual(status, expected_status)
-        self.failUnless(('Content-Length', '%d' % len(expected_body)) in headers)
-        self.failUnless(expected_body in body)
+        self.assertEqual(expected_body, body[0])
