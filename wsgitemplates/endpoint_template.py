@@ -10,7 +10,8 @@ class Endpoint(BaseTemplate):
     entrypoint_type = "paste.app_factory"
         
     vars = [
-        var('entrypointname', 'The name of the application being created.' 
-                              ' (lowercase letters only, no special chars)'),
+        var('entrypointname', 'The name of the application being created.'
+            ' (lowercase letters only, no special chars)',
+            default='main'),
         ]
 
