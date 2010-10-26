@@ -1,5 +1,4 @@
 from paste.script import templates
-from paste.script.templates import var
 import os
 
 class Package(templates.Template):
@@ -12,13 +11,7 @@ class Package(templates.Template):
     def run(self, command, output_dir, vars):
         templates.Template.run(self, command, output_dir, vars)
 
-    vars = [
-        var('version', 'Version', default='1.0'),
-        var('description', 'One-line description of the package'),
-        var('long_description', 'Multi-line description (in reST)'),
-        var('author', 'Author name'),
-        var('author_email', 'Author email'),
-        ]
+    vars = []
     
     def pre(self, command, output_dir, vars):
         vars['segs'] = vars['egg'].split('.')
@@ -33,7 +26,9 @@ class Package(templates.Template):
     
     def post(self, command, output_dir, vars):
         cwd = os.getcwd()
-        os.chdir(os.path.join(vars['egg'], 'src'))
+        os.chdir(vars['egg'])
+        os.mkdir('src')
+        os.chdir('src')
         for i in range(len(vars['segs'])):
             segs = vars['segs'][0:i+1]
             try:
